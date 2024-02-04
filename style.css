@@ -186,15 +186,15 @@ body{
 }
 /* 헤더 */
     header{
-        position: absolute;
-        top: calc(var(--notice-height) + 5px);
+        position: fixed;
+        top: calc(var(--notice-height) + 2px);
         left: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        width: 100%;
+        width: calc(100% - 10px);
         height: var(--box-height);
-            /* padding:  15px; */
+            margin:  5px;
         background-color: var(--header-bgColor);
         backdrop-filter: var(--blur);
         -webkit-backdrop-filter: var(--blur);
@@ -287,6 +287,9 @@ body{
         text-align: center;
     }
 /* 아이템 */
+    .item-container{
+      flex: 1;
+    }
     .item{
         width: 100%;
         height: var(--item-height);
@@ -351,7 +354,7 @@ body{
     }    
 /* 푸터 */
 footer{
-    justify-self: end;
+    flex: 0;
     margin: 30px 20px 50px 20px;
 }
 footer p{
