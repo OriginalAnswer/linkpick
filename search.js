@@ -15,7 +15,6 @@ const itemContainer = document.querySelector('.item-container');
 const currentView = document.querySelector('.currentview');
 const allItem = document.querySelectorAll('.item'); 
     const inputSearch = document.getElementById('input-search');
-const f = document.querySelector('footer');
 
 function search() {
     const searchValue = inputSearch.value;
