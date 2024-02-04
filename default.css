@@ -45,6 +45,7 @@ a:active, button:active{
 }
 /* ============= */
 *{
+    /* font-family: 'Pretendard-Regular', Helvetica,sans-serif ,serif; */
     box-sizing: border-box; 
     -webkit-box-sizing: border-box; 
     -moz-box-sizing: border-box; 
