@@ -23,13 +23,14 @@
         .search
             label.search-icon
             input#input-search
-        a.item
-            .item-l
-                img
-            .item-r
-                .tag-container
-                    .tag
-                .item-name
+        .item-container
+            a.item
+                .item-l
+                    img
+                .item-r
+                    .tag-container
+                        .tag
+                    .item-name
         footer
             .dashline
             .textitem
