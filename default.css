@@ -43,6 +43,11 @@ a:hover, button:hover{
 a:active, button:active{
     transform: scale(.98);
 }
+html{
+    /* ::-webkit-scrollbar{
+        display: none;
+      } */
+}
 /* ============= */
 *{
     /* font-family: 'Pretendard-Regular', Helvetica,sans-serif ,serif; */
@@ -62,7 +67,6 @@ a:active, button:active{
 .dashline{
     transform: scale(1,.1);
     margin: 10px 0;
-    width: 100%;
     border: dashed 1px #000000;
     stroke-dasharray: 15%2c 16%2c 19;
 }
