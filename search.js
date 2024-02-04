@@ -1,34 +1,18 @@
-// const originView = document.querySelector('.links');
-// const currentView = document.querySelector('.currentview');
-// const allLinks = document.querySelectorAll('.link'); 
-// function search(v) {
-//     if (v == "") {
-//         originView.classList.remove('dpnone')
-//         currentView.classList.add('dpnone');
-//     } else {
-//         originView.classList.add('dpnone');
-//         currentView.classList.remove('dpnone')
-//     };
-//     const n = document.querySelector('.item-name');
-// }
-const itemContainer = document.querySelector('.item-container');
-const currentView = document.querySelector('.currentview');
+const inputSearch = document.getElementById('input-search');
 const allItem = document.querySelectorAll('.item'); 
-    const inputSearch = document.getElementById('input-search');
-
+ 
 function search() {
-    const searchValue = inputSearch.value;
-    const currentItem = document.getElementById(searchValue);
-    console.log(searchValue)
-    if (searchValue > 0) {
-        allItem.forEach(item => {
-            item.classList.add('dpnone');
-        });
-        currentItem.classList.remove('dpnone');
-    } else {
-        allItem.forEach(item => {
-            item.classList.remove('dpnone');
-        });        
+    // 입력된 검색어 가져오기
+    const searchValue = inputSearch.value.toLowerCase();
+
+    // 각 제품에 대해 검색어와 일치하는지 확인하여 필터링
+    const allItem = document.querySelectorAll('.item'); 
+    for (var i = 0; i < allItem.length; i++) {
+        const itemName = allItem[i].getElementsByClassName("item-name")[0].innerText.toLowerCase();
+        if (itemName.includes(searchValue)) {
+            allItem[i].classList.remove('dpnone');// 보이기
+        } else {
+            allItem[i].classList.add('dpnone'); // 숨기기
+        }
     }
 }
-console.log(inputSearch.value);
