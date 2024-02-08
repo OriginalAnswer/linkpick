@@ -1,12 +1,20 @@
-//     {num : "", title : "", img : "./img/thumb/",link : "", tag1:"" , tag2:"" , tag0:""},
+//{num : "", title : "", img : "./img/thumb/",link : "", tag1:"" , tag2:"" , tag0:""},
 const itemContainer = document.querySelector('.item-container');
 const itemDB = [
-    {num : "001", title : "레이저 가위", img : "./img/thumb/001.jpg",link : "https://link.coupang.com/a/bps53dx", tag1:"완벽하게" , tag2:"싹뚝싹뚝" , tag0:"쿠팡"},
-    {num : "002", title : "공간절약 건조기", img : "./img/thumb/002.jpg",link : "https://link.coupang.com/a/bps53de", tag1:"이게바로" , tag2:"공간절약" , tag0:"알리"},
-    {num : "002-1", title : "미니 의류 건조기", img : "./img/thumb/002-1.jpg",link : "https://link.coupang.com/a/bps53dge", tag1:"이게바로" , tag2:"공간절약" , tag0:"로켓"},
-    {num : "003", title : "원형 샤워커튼 샤워부스", img : "./img/thumb/003.jpg",link : "https://link.coupang.com/a/bps53dge", tag1:"완벽차단" , tag2:"샤워커튼" , tag0:"로켓"},
-    {num : "004", title : "북라이트 무드등", img : "./img/thumb/004.jpg",link : "https://link.coupang.com/a/bps53dg", tag1:"펼치면" , tag2:"은은해지는" , tag0:"쿠팡"},
-    {num : "005", title : "페달식 도어스토퍼", img : "./img/thumb/005.jpg",link : "https://link.coupang.com/a/bps53df", tag1:"손대신" , tag2:"발로" , tag0:"쿠팡"}
+    {num : "001", title : "레이저 가위", link : "https://link.coupang.com/a/bps53dx", tag1:"완벽하게" , tag2:"싹뚝싹뚝" , tag0:"쿠팡", img : "./img/thumb/001.jpg"},
+    {num : "002", title : "공간절약 건조기", link : "https://s.click.aliexpress.com/e/_DmgVial", tag1:"이게바로" , tag2:"공간절약" , tag0:"알리", img : "./img/thumb/002.jpg"},
+    {num : "002-1", title : "미니 의류 건조기", link : "https://link.coupang.com/a/bpRHqm", tag1:"이게바로" , tag2:"공간절약" , tag0:"로켓", img : "./img/thumb/002-1.jpg"},
+    {num : "003", title : "원형 샤워커튼 샤워부스", link : "https://link.coupang.com/a/bpANt0", tag1:"완벽차단" , tag2:"샤워커튼" , tag0:"로켓", img : "./img/thumb/003.jpg"},
+    {num : "004", title : "북라이트 무드등", link : "https://link.coupang.com/a/bpNiAm", tag1:"펼치면" , tag2:"은은해지는" , tag0:"쿠팡", img : "./img/thumb/004.jpg"},
+    {num : "005", title : "페달식 도어스토퍼", link : "https://link.coupang.com/a/bpNlyF", tag1:"손대신" , tag2:"발로" , tag0:"쿠팡", img : "./img/thumb/005.jpg"},
+    {num : "", title : "", link : "", tag1:"" , tag2:"" , tag0:"", img : "./img/thumb/"},
+    {num : "", title : "", link : "", tag1:"" , tag2:"" , tag0:"", img : "./img/thumb/"},
+    {num : "", title : "", link : "", tag1:"" , tag2:"" , tag0:"", img : "./img/thumb/"},
+    {num : "", title : "", link : "", tag1:"" , tag2:"" , tag0:"", img : "./img/thumb/"},
+    {num : "", title : "", link : "", tag1:"" , tag2:"" , tag0:"", img : "./img/thumb/"},
+    {num : "", title : "", link : "", tag1:"" , tag2:"" , tag0:"", img : "./img/thumb/"},
+    {num : "", title : "", link : "", tag1:"" , tag2:"" , tag0:"", img : "./img/thumb/"},
+    {num : "", title : "", link : "", tag1:"" , tag2:"" , tag0:"", img : "./img/thumb/"},
 ]
 // itemDB의 각 항목을 HTML 형식에 맞게 itemContainer에 추가합니다.
 itemDB.forEach(item => {
