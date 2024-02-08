@@ -11,7 +11,7 @@ const itemDB = [
 // itemDB의 각 항목을 HTML 형식에 맞게 itemContainer에 추가합니다.
 itemDB.forEach(item => {
     if (item.img === "./img/thumb/") {return;}
-    
+
     const itemElement = document.createElement('a');
         itemElement.href = item.link;
         itemElement.classList.add('item', 'box-type-3');
@@ -41,6 +41,9 @@ itemDB.forEach(item => {
                     // tag2의 배경색을 랜덤으로 지정합니다.
                     const randomColor = getRandomColor();
                     tagElement.style.backgroundColor = randomColor;
+                    // 배경색에 따라 글자색을 조정합니다.
+                    const textColor = getTextColor(randomColor);
+                    tagElement.style.color = textColor;
                 }
                 if (tag === "쿠팡") {
                     tagElement.classList.add('tag-coupang');
@@ -75,8 +78,20 @@ function getRandomColor() {
     for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
     }
-    color = color + "75";
+    color = color + 'a1';
     return color;
+}
+// 배경색에 따라 글자색을 조정하는 함수
+function getTextColor(bgColor) {
+    // 배경색을 rgba에서 RGB로 변환합니다.
+    let rgbColor = bgColor.substring(0, 7); // alpha 값 제거
+    const r = parseInt(rgbColor.substring(1, 3), 16);
+    const g = parseInt(rgbColor.substring(3, 5), 16);
+    const b = parseInt(rgbColor.substring(5, 7), 16);
+    // 밝기 계산
+    const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+    // 밝기에 따라 글자색 결정
+    return brightness > 125 ? '#000000' : '#ffffff';
 }
 
 
