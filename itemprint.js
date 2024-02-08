@@ -1,3 +1,4 @@
+//     {num : "", title : "", img : "./img/thumb/",link : "", tag1:"" , tag2:"" , tag0:""},
 const itemContainer = document.querySelector('.item-container');
 const itemDB = [
     {num : "001", title : "레이저 가위", img : "./img/thumb/001.jpg",link : "https://link.coupang.com/a/bps53dx", tag1:"완벽하게" , tag2:"싹뚝싹뚝" , tag0:"쿠팡"},
@@ -9,58 +10,62 @@ const itemDB = [
 ]
 // itemDB의 각 항목을 HTML 형식에 맞게 itemContainer에 추가합니다.
 itemDB.forEach(item => {
+    if (item.img === "./img/thumb/") {return;}
+    
     const itemElement = document.createElement('a');
-    itemElement.href = item.link;
-    itemElement.classList.add('item', 'box-type-3');
-
+        itemElement.href = item.link;
+        itemElement.classList.add('item', 'box-type-3');
+        // a
     const itemLeft = document.createElement('div');
-    itemLeft.classList.add('item-l');
-
+        itemLeft.classList.add('item-l');
+        // a>.item-l
     const imgElement = document.createElement('img');
-    imgElement.src = item.img;
-    imgElement.alt = "product thumbnail";
-    imgElement.classList.add('item-img');
-    itemLeft.appendChild(imgElement);
-
+        imgElement.src = item.img;
+        imgElement.alt = "product thumbnail";
+        imgElement.classList.add('item-img');
+        itemLeft.appendChild(imgElement);
+        //a>.item-l>.item-img
     const itemRight = document.createElement('div');
-    itemRight.classList.add('item-r');
-
+        itemRight.classList.add('item-r');
+        // a>.item-r
     const tagContainer = document.createElement('div');
-    tagContainer.classList.add('tag-container');
+        tagContainer.classList.add('tag-container');
+        // .tag-container
     const tags = [item.tag1, item.tag2, item.tag0];
-    tags.forEach((tag, index) => {
-        if (tag !== "") {
-            const tagElement = document.createElement('div');
-            tagElement.classList.add('tag');
-            tagElement.textContent = tag;
-            if (index === 1) {
-                // tag2의 배경색을 랜덤으로 지정합니다.
-                const randomColor = getRandomColor();
-                tagElement.style.backgroundColor = randomColor;
+        tags.forEach((tag, index) => {
+            if (tag !== "") {
+                const tagElement = document.createElement('div');
+                tagElement.classList.add('tag');
+                tagElement.textContent = tag;
+                if (index === 1) {
+                    // tag2의 배경색을 랜덤으로 지정합니다.
+                    const randomColor = getRandomColor();
+                    tagElement.style.backgroundColor = randomColor;
+                }
+                if (tag === "쿠팡") {
+                    tagElement.classList.add('tag-coupang');
+                } else if (tag === "알리") {
+                    tagElement.classList.add('tag-ali');
+                } else if (tag === "로켓") {
+                    tagElement.classList.add('tag-rocket');
+                    tagElement.textContent = tag + "🚀";
+                }
+                tagContainer.appendChild(tagElement);
             }
-            if (tag === "쿠팡") {
-                tagElement.classList.add('tag-coupang');
-            } else if (tag === "알리") {
-                tagElement.classList.add('tag-ali');
-            } else if (tag === "로켓") {
-                tagElement.classList.add('tag-rocket');
-                tagElement.textContent = tag + "🚀";
-            }
-            tagContainer.appendChild(tagElement);
-        }
-    });
+        });
+        // .tag-container>.tag*3
 
     const itemName = document.createElement('span');
-    itemName.classList.add('item-name');
-    itemName.textContent = `${item.num}. ${item.title}`;
+        itemName.classList.add('item-name');
+        itemName.textContent = `${item.num}. ${item.title}`;
+        //.item-name
+        itemRight.appendChild(tagContainer);
+        itemRight.appendChild(itemName);
 
-    itemRight.appendChild(tagContainer);
-    itemRight.appendChild(itemName);
+        itemElement.appendChild(itemLeft);
+        itemElement.appendChild(itemRight);
 
-    itemElement.appendChild(itemLeft);
-    itemElement.appendChild(itemRight);
-
-    itemContainer.appendChild(itemElement);
+        itemContainer.appendChild(itemElement);
 });
 
 // 랜덤한 색상을 생성하는 함수
