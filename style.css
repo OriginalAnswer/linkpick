@@ -240,6 +240,12 @@ body{
         height: calc(var(--box-height)/2) ;
         width: calc(var(--box-height)/2) ;
     }
+    .header-icon i {
+        font-weight: bold;
+    }
+    .header-icon:nth-last-child(1) {
+        font-size: 1.2em;
+    }
     .header-icon:hover{
         color:var(--fff);
         background-color: var(--btn-focus-backgroundColor-0);
