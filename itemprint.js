@@ -1,12 +1,12 @@
 //{num : "", title : "", img : "./img/thumb/",link : "", tag1:"" , tag2:"" , tag0:""},
 const itemContainer = document.querySelector('.item-container');
 const itemDB = [
-    {num : "001", img : "./img/thumb/001.jpg", title : "레이저 가위", link : "https://link.coupang.com/a/bps53dx", tag1:"완벽하게" , tag2:"싹뚝싹뚝" , tag0:"쿠팡"},
+    {num : "001", img : "./img/thumb/001.jpg", title : "레이저 가위", link : "https://link.coupang.com/a/bps53dx", tag1:"완벽하게" , tag2:"싹뚝싹뚝" , tag0:""},
     {num : "002", img : "./img/thumb/002.jpg", title : "공간절약 건조기", link : "https://s.click.aliexpress.com/e/_DmgVial", tag1:"이게바로" , tag2:"공간절약" , tag0:"알리"},
     {num : "002-1", img : "./img/thumb/002-1.jpg", title : "미니 의류 건조기", link : "https://link.coupang.com/a/bpRHqm", tag1:"이게바로" , tag2:"공간절약" , tag0:"로켓"},
     {num : "003", img : "./img/thumb/003.jpg", title : "원형 샤워커튼 샤워부스", link : "https://link.coupang.com/a/bpANt0", tag1:"완벽차단" , tag2:"샤워커튼" , tag0:"로켓"},
-    {num : "004", img : "./img/thumb/004.jpg", title : "북라이트 무드등", link : "https://link.coupang.com/a/bpNiAm", tag1:"펼치면" , tag2:"은은해지는" , tag0:"쿠팡"},
-    {num : "005", img : "./img/thumb/005.jpg", title : "페달식 도어스토퍼", link : "https://link.coupang.com/a/bpNlyF", tag1:"손대신" , tag2:"발로" , tag0:"쿠팡"},
+    {num : "004", img : "./img/thumb/004.jpg", title : "북라이트 무드등", link : "https://link.coupang.com/a/bpNiAm", tag1:"펼치면" , tag2:"은은해지는" , tag0:""},
+    {num : "005", img : "./img/thumb/005.jpg", title : "페달식 도어스토퍼", link : "https://link.coupang.com/a/bpNlyF", tag1:"손대신" , tag2:"발로" , tag0:"로켓"},
     {num : "006", img : "./img/thumb/", title : "인체모형 보드게임", link : "https://link.coupang.com/a/bpTa44", tag1:"" , tag2:"" , tag0:""},
     {num : "007", img : "./img/thumb/", title : "펀치킹 뿅망치 스피드게임", link : "https://link.coupang.com/a/bpTb5O", tag1:"" , tag2:"" , tag0:""},
     {num : "008", img : "./img/thumb/", title : "GIIKER 창의력 발달 게임", link : "https://link.coupang.com/a/bpTcQQ", tag1:"" , tag2:"" , tag0:""},
@@ -14,8 +14,9 @@ const itemDB = [
     {num : "010", img : "./img/thumb/", title : "심장이 쫄깃해지는 풍선 복불복게임", link : "https://link.coupang.com/a/bpTelp", tag1:"" , tag2:"" , tag0:""},
     {num : "011", img : "./img/thumb/", title : "상어를 조심해! 복불복 게임", link : "https://link.coupang.com/a/bpTeBZ", tag1:"" , tag2:"" , tag0:""},
     {num : "012", img : "./img/thumb/", title : "샤크룰렛 복불복게임", link : "https://link.coupang.com/a/bpTeSe", tag1:"" , tag2:"" , tag0:"", },
-    {num : "013", img : "./img/thumb/013.jpg", title : "1+1 셀프 롤러 마사지기", link : "https://link.coupang.com/a/bpXTFm", tag1:"어우" , tag2:"시원해" , tag0:""},
+    {num : "013", img : "./img/thumb/013.jpg", title : "1+1 셀프 롤러 마사지기", link : "https://link.coupang.com/a/bpXTFm", tag1:"1+1 으로" , tag2:"시원하게" , tag0:""},
     {num : "013-1", img : "./img/thumb/013-1.jpg", title : "셀프 롤러 마사지기", link : "https://link.coupang.com/a/bpXVaa", tag1:"어우" , tag2:"시원해" , tag0:"로켓"},
+    {num : "013-2", img : "./img/thumb/013.jpg", title : "주무르넥 셀프 롤러 마사지기", link : "https://link.coupang.com/a/bpYelN", tag1:"어우" , tag2:"시원해" , tag0:"로켓"},
     {num : "014", img : "./img/thumb/", title : "", link : "", tag1:"" , tag2:"" , tag0:""},
     {num : "015", img : "./img/thumb/", title : "", link : "", tag1:"" , tag2:"" , tag0:""},
     {num : "016", img : "./img/thumb/", title : "", link : "", tag1:"" , tag2:"" , tag0:""},
@@ -54,7 +55,8 @@ const itemDB = [
     {num : "049", img : "./img/thumb/", title : "", link : "", tag1:"" , tag2:"" , tag0:""},
 ]
 // itemDB의 각 항목을 HTML 형식에 맞게 itemContainer에 추가합니다.
-itemDB.forEach(item => {
+const reversedItemDB = itemDB.slice().reverse();
+reversedItemDB.forEach(item => {
     if (item.img === "./img/thumb/") {return;}
 
     const itemElement = document.createElement('a');

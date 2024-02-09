@@ -74,6 +74,61 @@ body{
     overflow-x: hidden;
 }
 /* ============================= */
+.notice-warpper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--notice-height);
+    display: block;
+    overflow-x: hidden;
+    background-color: var(--notice-backgroundColor);
+    color: #fff;
+    font-weight: bold;
+    z-index: 10;
+}
+.notice-warpper .notice{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: var(--notice-height);
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: var(--notice-backgroundColor);
+    /* border: var(--border1); */
+    display: flex;
+    align-items: center;
+    
+}
+.notice span{
+    margin-left: 110px;
+    font-size: var(--notice-fontSize);
+}
+.notice-1{
+    transform: translateX(0%);
+    animation: infniteNotice1 var(--notice-ani-speed-first) linear forwards;
+    /* animation-play-state:paused */
+}
+.notice-2{
+    transform: translateX(100%);
+    animation: infniteNotice2 var(--notice-ani-speed) infinite linear ;
+    /* animation-delay: 5s; */
+}
+.notice-3{
+    transform: translateX(100%);
+    animation: infniteNotice2 var(--notice-ani-speed) infinite linear;
+    animation-delay: var(--notice-ani-dly);
+}
+@keyframes infniteNotice1 {
+    0%{transform: translateX(0);}
+    100%{transform: translateX(-100%);}
+}
+@keyframes infniteNotice2 {
+    0%{transform: translateX(100%);}
+    100%{transform: translateX(-100%);}
+}
+
+/* ============================= */
 /* ============================= */
 /* ============================= */
 /* 
@@ -250,7 +305,8 @@ body{
         
         padding: var(--item-padding); 
         margin-bottom: var(--margin-gap);
-        transition: box-shadow .2s ease-in-out;
+        transition: box-shadow .2s ease-in-out, scale .2s ease-in-out;
+        transition: all .2s ease-in-out;
     }
     .item:hover{
             cursor: pointer;
@@ -385,61 +441,7 @@ footer .textitem{
 
 
 /* ============================= */
-.notice-warpper{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--notice-height);
-    display: block;
-    overflow-x: hidden;
-    background-color: var(--notice-backgroundColor);
-    color: #fff;
-    font-weight: bold;
-    z-index: 10;
-}
-.notice-warpper .notice{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: var(--notice-height);
-    white-space: nowrap;
-    overflow: hidden;
-    background-color: var(--notice-backgroundColor);
-    /* border: var(--border1); */
-    display: flex;
-    align-items: center;
-    
-}
-.notice span{
-    margin-left: 110px;
-    font-size: var(--notice-fontSize);
-}
-.notice-1{
-    transform: translateX(0%);
-    animation: infniteNotice1 var(--notice-ani-speed-first) linear forwards;
-    /* animation-play-state:paused */
-}
-.notice-2{
-    transform: translateX(100%);
-    animation: infniteNotice2 var(--notice-ani-speed) infinite linear ;
-    /* animation-delay: 5s; */
-}
-.notice-3{
-    transform: translateX(100%);
-    animation: infniteNotice2 var(--notice-ani-speed) infinite linear;
-    animation-delay: var(--notice-ani-dly);
-}
-@keyframes infniteNotice1 {
-    0%{transform: translateX(0);}
-    100%{transform: translateX(-100%);}
-}
-@keyframes infniteNotice2 {
-    0%{transform: translateX(100%);}
-    100%{transform: translateX(-100%);}
-}
 
-/* ============================= */
 .dpnone{
     display: none;
 }
